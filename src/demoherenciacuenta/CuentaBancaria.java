@@ -11,20 +11,23 @@ package demoherenciacuenta;
  */
 public class CuentaBancaria {
     private int numeroDeCuenta;
-    private String cliente;
+    private Cliente cliente;
     private double saldo;
     
-    public CuentaBancaria (int numeroDeCuenta, String cliente){
-        this.cliente = cliente;
+    public CuentaBancaria (int numeroDeCuenta, String nombre,String apellido){
+        this.cliente = new Cliente (nombre, apellido);
         this.numeroDeCuenta = numeroDeCuenta;
         this.saldo =0.0;
     }
-    private void NumeroDeCuenta(int numeroDeCuenta){
+    public void NumeroDeCuenta(int numeroDeCuenta){
         this.numeroDeCuenta = numeroDeCuenta;
     }
     
-    private void Cliente(String cliente){
+    public void Cliente(Cliente cliente){
         this.cliente = cliente;
+    }
+    public Cliente getcliente(){
+        return cliente;
     }
     
     public void Depositar(double cantidad){
